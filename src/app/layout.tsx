@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { BudgetProvider } from '@/contexts/BudgetContext'
 import Navigation from '@/components/Navigation'
 import dynamic from 'next/dynamic'
 
