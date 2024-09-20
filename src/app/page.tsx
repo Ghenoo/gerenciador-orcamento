@@ -11,7 +11,8 @@ export default function Home() {
       </p>
       <h2 className="text-2xl font-bold mb-2">Como funciona:</h2>
       <ol className="list-decimal list-inside mb-4">
-        <li>O login ainda não está funcionando...preciso aprender sobre o firebase, uma hora vai funcionar kkkkkkkkkk</li>
+        <li>O login ainda não está funcionando...preciso aprender sobre o firebase, uma hora vai funcionar kkkkkkkkkk mas o /login existe e a lógica está 
+          quase pronta, só falta a parte da autenticação.</li>
         <li>Acesse o Dashboard para adicionar suas receitas e despesas.</li>
         <li>Visualize o resumo do seu orçamento, incluindo o saldo total.</li>
         <li>Gerencie suas finanças com mais facilidade.</li>
