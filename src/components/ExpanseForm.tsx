@@ -39,7 +39,7 @@ export default function ExpenseForm() {
           required
         />
       </div>
-      <button type="submit" className="w-full bg-red-500 text-white p-2 rounded hover:bg-red-600">
+      <button type="submit" className="w-full font-bold bg-red-500 text-white p-2 rounded hover:bg-red-600">
         Adicionar Despesa
       </button> 
       

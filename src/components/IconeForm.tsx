@@ -39,7 +39,7 @@ export default function IncomeForm() {
           required
         />
       </div>
-      <button type="submit" className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">
+      <button type="submit" className="w-full font-bold bg-green-500 text-white p-2 rounded hover:bg-green-600">
         Adicionar Receita
       </button>
     </form>
