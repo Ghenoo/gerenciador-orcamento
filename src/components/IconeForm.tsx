@@ -4,15 +4,18 @@ import { useState } from 'react'
 import { useBudget } from '@/contexts/BudgetContext'
 
 export default function IncomeForm() {
-  const [amount, setAmount] = useState<number>(0)
+  const [amount, setAmount] = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const { addTransaction } = useBudget()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    addTransaction({ amount, description, type: 'income' })
-    setAmount(0)
-    setDescription('')
+    const numAmount = parseFloat(amount)
+    if (!isNaN(numAmount) && numAmount > 0) {
+      addTransaction({ amount: numAmount, description, type: 'income' })
+      setAmount('')
+      setDescription('')
+    }
   }
 
   return (
@@ -23,9 +26,12 @@ export default function IncomeForm() {
           type="number"
           id="incomeAmount"
           value={amount}
-          onChange={(e) => setAmount(Number(e.target.value))}
+          onChange={(e) => setAmount(e.target.value)}
           className="w-full p-2 border rounded"
           required
+          min="0"
+          step="0.01"
+          placeholder="Digite o valor da receita"
         />
       </div>
       <div>
@@ -37,9 +43,13 @@ export default function IncomeForm() {
           onChange={(e) => setDescription(e.target.value)}
           className="w-full p-2 border rounded"
           required
+          placeholder="Digite a descrição da receita"
         />
       </div>
-      <button type="submit" className="w-full font-bold bg-green-500 text-white p-2 rounded hover:bg-green-600">
+      <button 
+        type="submit" 
+        className="w-full font-bold bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300"
+      >
         Adicionar Receita
       </button>
     </form>
