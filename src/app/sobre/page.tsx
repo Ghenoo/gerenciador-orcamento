@@ -5,15 +5,15 @@ export default function About() {
         <p className="mb-4">
           Este site foi criado como um projeto para uma matéria da faculdade.
         </p>
-        <h2 className="text-2xl font-bold mb-2">Stacks utilizadas:</h2>
+        <h2 className="text-2xl font-bold mb-2">Stacks e tecnologias utilizadas:</h2>
         <ul className="list-disc list-inside mb-4">
           <li>Next.js</li>
           <li>React</li>
           <li>TypeScript</li>
           <li>Tailwind CSS</li>
-          <li>Context API para gerenciamento de estado</li>
-          <li>LocalStorage para armazenamento de dados local</li>
-          <li>React-icons para icons</li>
+          <li>Context API</li>
+          <li>LocalStorage</li>
+          <li>React-icons</li>
 
         </ul>
       </main>
