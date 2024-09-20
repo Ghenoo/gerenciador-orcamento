@@ -25,32 +25,42 @@ export const useBudget = () => useContext(BudgetContext)
 
 export const BudgetProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [transactions, setTransactions] = useState<Transaction[]>([])
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const storedTransactions = localStorage.getItem('budgetTransactions')
-    if (storedTransactions) {
-      setTransactions(JSON.parse(storedTransactions))
+    const loadTransactions = () => {
+      const storedTransactions = localStorage.getItem('budgetTransactions')
+      if (storedTransactions) {
+        setTransactions(JSON.parse(storedTransactions))
+      }
+      setIsLoaded(true)
+    }
+
+    if (typeof window !== 'undefined') {
+      loadTransactions()
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('budgetTransactions', JSON.stringify(transactions))
-  }, [transactions])
+    if (isLoaded) {
+      localStorage.setItem('budgetTransactions', JSON.stringify(transactions))
+    }
+  }, [transactions, isLoaded])
 
   const addTransaction = (transaction: Omit<Transaction, 'id'>) => {
     const newTransaction: Transaction = {
       ...transaction,
       id: Date.now(),
     }
-    setTransactions([...transactions, newTransaction])
+    setTransactions(prevTransactions => [...prevTransactions, newTransaction])
   }
 
   const removeTransaction = (id: number) => {
-    setTransactions(transactions.filter(t => t.id !== id))
+    setTransactions(prevTransactions => prevTransactions.filter(t => t.id !== id))
   }
 
   const editTransaction = (id: number, updatedTransaction: Omit<Transaction, 'id'>) => {
-    setTransactions(transactions.map(t => 
+    setTransactions(prevTransactions => prevTransactions.map(t => 
       t.id === id ? { ...updatedTransaction, id } : t
     ))
   }
@@ -67,7 +77,7 @@ export const BudgetProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   return (
     <BudgetContext.Provider value={{
-      transactions,
+      transactions: transactions || [],  
       addTransaction,
       removeTransaction,
       editTransaction,
@@ -79,3 +89,5 @@ export const BudgetProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     </BudgetContext.Provider>
   )
 }
+
+export default BudgetProvider

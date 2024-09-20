@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { useBudget } from '@/contexts/BudgetContext'
 import { FaTrash, FaEdit } from 'react-icons/fa'
 
@@ -19,11 +20,15 @@ export default function TransactionList() {
     }
   }
 
+  if (!transactions || transactions.length === 0) {
+    return <p>Nenhuma transação registrada.</p>
+  }
+
   return (
     <ul className="space-y-2">
       {transactions.map((t) => (
         <li key={t.id} className={`flex justify-between items-center p-2 rounded ${t.type === 'income' ? 'bg-green-100' : 'bg-red-100'}`}>
-          <span>{t.description}: R$ {t.amount.toFixed(2)}</span>
+          <span>{t.description}: R$ {t.amount?.toFixed(2) ?? '0.00'}</span>
           <div>
             <button
               onClick={() => handleEdit(t.id, t.amount, t.description, t.type)}
