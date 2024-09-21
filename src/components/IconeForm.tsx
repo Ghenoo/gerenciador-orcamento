@@ -21,13 +21,13 @@ export default function IncomeForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="incomeAmount" className="block mb-1">Valor</label>
+        <label htmlFor="incomeAmount" className="block font-poppins  mb-1">Valor</label>
         <input
           type="number"
           id="incomeAmount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full font-poppins p-2 border rounded"
           required
           min="0"
           step="0.01"
@@ -35,20 +35,20 @@ export default function IncomeForm() {
         />
       </div>
       <div>
-        <label htmlFor="incomeDescription" className="block mb-1">Descrição</label>
+        <label htmlFor="incomeDescription" className="block font-poppins mb-1">Descrição</label>
         <input
           type="text"
           id="incomeDescription"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full font-poppins p-2 border rounded"
           required
           placeholder="Digite a descrição da receita"
         />
       </div>
       <button 
         type="submit" 
-        className="w-full font-bold bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300"
+        className="w-full font-poppins font-bold bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300"
       >
         Adicionar Receita
       </button>

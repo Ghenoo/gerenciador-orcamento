@@ -10,7 +10,7 @@ export default function Dashboard() {
 
   return (
     <main className="p-8">
-      <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
+      <h1 className="text-3xl font-poppins font-semibold mb-6">Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div className="bg-green-100 p-4 rounded">
           <h2 className="text-xl font-semibold mb-2">Total de Receitas</h2>
@@ -27,16 +27,16 @@ export default function Dashboard() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-2xl font-bold mb-4">Adicionar Receita</h2>
+          <h2 className="text-2xl font-poppins font-bold mb-4">Adicionar Receita</h2>
           <IncomeForm />
         </div>
         <div>
-          <h2 className="text-2xl font-bold mb-4">Adicionar Despesa</h2>
+          <h2 className="text-2xl font-poppins font-bold mb-4">Adicionar Despesa</h2>
           <ExpenseForm />
         </div>
       </div>
       <div className="mt-8">
-        <h2 className="text-2xl font-bold mb-4">Transações Recentes</h2>
+        <h2 className="text-2xl font-poppins font-bold mb-4">Transações Recentes</h2>
         <TransactionList />
       </div>
     </main>

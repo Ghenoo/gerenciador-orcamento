@@ -21,13 +21,13 @@ export default function ExpenseForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="expenseAmount" className="block mb-1">Valor</label>
+        <label htmlFor="expenseAmount" className="block font-poppins mb-1">Valor</label>
         <input
           type="number"
           id="expenseAmount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 font-poppins border rounded"
           required
           min="0"
           step="0.01"
@@ -35,20 +35,20 @@ export default function ExpenseForm() {
         />
       </div>
       <div>
-        <label htmlFor="expenseDescription" className="block mb-1">Descrição</label>
+        <label htmlFor="expenseDescription" className="block font-poppins mb-1">Descrição</label>
         <input
           type="text"
           id="expenseDescription"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="w-full p-2 border rounded"
+          className="w-full font-poppins  p-2 border rounded"
           required
           placeholder="Digite a descrição da despesa"
         />
       </div>
       <button 
         type="submit" 
-        className="w-full font-bold bg-red-500 text-white p-2 rounded hover:bg-red-600 transition duration-300"
+        className="w-full font-poppins font-semibold bg-red-500 text-white p-2 rounded hover:bg-red-600 transition duration-300"
       >
         Adicionar Despesa
       </button>

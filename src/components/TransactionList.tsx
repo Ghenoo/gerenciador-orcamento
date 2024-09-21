@@ -27,7 +27,7 @@ export default function TransactionList() {
   return (
     <ul className="space-y-2">
       {transactions.map((t) => (
-        <li key={t.id} className={`flex justify-between items-center p-2 rounded ${t.type === 'income' ? 'bg-green-100' : 'bg-red-100'}`}>
+        <li key={t.id} className={`flex justify-between font-poppins items-center p-2 rounded ${t.type === 'income' ? 'bg-green-100' : 'bg-red-100'}`}>
           <span>{t.description}: R$ {t.amount?.toFixed(2) ?? '0.00'}</span>
           <div>
             <button
@@ -38,7 +38,7 @@ export default function TransactionList() {
             </button>
             <button
               onClick={() => removeTransaction(t.id)}
-              className="text-red-500"
+              className="text-red-500 "
             >
               <FaTrash />
             </button>

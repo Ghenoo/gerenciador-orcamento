@@ -15,8 +15,8 @@ export default function Login() {
 
   return (
     <main className="p-8 max-w-md mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Login</h1>
-      <button className="w-full bg-red-500 text-white p-2 rounded flex items-center justify-center mb-4">
+      <h1 className="text-3xl font-poppins font-bold mb-6">Login</h1>
+      <button className="w-full bg-red-500 font-poppins text-white p-2 rounded flex items-center justify-center mb-4">
         <FaGoogle className="mr-2" /> Entrar com Google
       </button>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -27,7 +27,7 @@ export default function Login() {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full font-poppins p-2 border rounded"
             required
           />
         </div>
@@ -38,11 +38,11 @@ export default function Login() {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded"
+            className="w-full font-poppins p-2 border rounded"
             required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
+        <button type="submit" className="w-full font-poppins bg-blue-500 text-white p-2 rounded">
           Entrar
         </button>
       </form>
