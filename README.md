@@ -1,4 +1,4 @@
-##Gerenciador de orçamento pessoais
+## Gerenciador de orçamento pessoais
 
 - Esse projeto foi criado com intuito em uma atividade na faculdade, na qual era necessário criar um gerenciador de finanças.
 
